@@ -1,0 +1,74 @@
+.footer {
+    height: 15rem;
+    /* width: 100%; */
+    background-color: #413b1b;
+    display: flex;
+    color: white;
+    /* text-align: center; */
+    padding-left: 10rem;
+    padding-top: 3rem;
+    letter-spacing: 0.1rem;
+}
+
+.footer_left img {
+    background-color: white;
+    border-radius: 16rem;
+    border: none;
+    width: 2rem;
+    /* display: inline-block; */
+    float: left;
+    transition: width 1s;
+}
+
+.footer_left {
+    flex: 0.5;
+    /* background-color: red; */
+}
+
+.footer_left img:hover{
+    width: 2.5rem;
+}
+
+.addrs {
+    padding-bottom: 2rem;
+}
+
+
+.footer_left p {
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+}
+
+.phone {
+    padding-bottom: 2rem;
+}
+
+
+
+
+.footer_right {
+    flex: 0.5;
+    /* background-color: green; */
+}
+
+.about_the_company {
+    padding-bottom: 2rem;
+}
+
+.detail_company {
+    padding-bottom: 2rem;
+    max-width: 20rem;
+    line-height: 1.4rem;
+}
+
+.footer_right img {
+    width: 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    margin-right: 1rem;
+    transition: width 1s;
+}
+
+.footer_right img:hover {
+    width: 2.5rem;
+}

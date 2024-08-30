@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: rgba(7,8,12,255);
+  padding: 1rem 1rem;
+  position: fixed;
+  width: 100%;
+  display: block;
+  transition: top 0.5s ease-in-out;
+}
+
+.navbar-hidden {
+  top: -100px
+}
+
+@media (min-width: 992px) { 
+  .hide{
+      top: -50px;
+  }    
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  /*  line-height: 25px; */
+  border-radius: 4px;
+  max-width: fit-content;
+  letter-spacing: 0.1rem;
+  margin-right: 1rem;
+}
+
+/* Route {
+
+} */
+
+.header h1 {
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 26px;
+  border-radius: 4px;
+  letter-spacing: 0.2rem;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  color: rgb(219, 219, 219);
+  max-width: fit-content;
+  width: fit-content;
+
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+  padding-top: 0.4rem;
+}
+
+.header-right a {
+  padding-right: 2rem;
+  max-width: fit-content;
+  width: fit-content;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}

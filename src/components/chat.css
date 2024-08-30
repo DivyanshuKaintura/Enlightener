@@ -1,0 +1,205 @@
+.App {
+    /* min-height: 89vh; */
+    max-height: 30rem;
+    max-width: 30%;
+
+    position: sticky;
+    float: right;
+    display: flex;
+    /* align-items: flex-end;
+    justify-content: flex-end; */
+    margin-left: 52rem;
+    margin-top: 7rem;
+    margin-right: 1rem;
+    /* height: 100%; */
+    border: 1rem solid rgb(238, 236, 236);
+    border-radius: 2rem;
+    /* box-shadow: 0 0 10px 10px #e5e4e4; */
+
+
+    /* display: none; */
+    /* opacity: 0;
+    transition: 1s; */
+
+}
+/* .App:active {
+    opacity: 1;
+} */
+
+.support {
+    text-align: center;
+    color: grey;
+}
+
+.collapse {
+    object-fit: cover;
+    width: 2rem;
+    margin-right: 0.4rem;
+    border-radius: 0.5rem;
+}
+
+.chatBot {
+    /* min-height: calc(100vh - 14rem); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    font-weight: 500;
+
+}
+
+
+.sticky {
+    position: fixed;
+    top: 20px;
+}
+
+.chats {
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 95%;
+    height: calc(100vh - 17rem);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chat {
+    margin: 0;
+    padding: 1rem 0.3rem;
+    /* font-size: 1.2rem; */
+    display: flex;
+    align-items: flex-start;
+    text-align: justify;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    /* padding-right: 1rem; */
+}
+
+.chatImg {
+    object-fit: cover;
+    width: 2rem;
+    margin-right: 0.4rem;
+    border-radius: 0.5rem;
+}
+
+.bot {
+    background: rgb(242, 242, 242);
+    width: fit-content;
+    border-radius: 0.5rem;
+}
+
+.user {
+    background: rgb(219, 219, 220);
+    width: fit-content;
+    border-radius: 0.5rem;
+}
+
+.chatFooter {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.inp {
+    padding: 0.5rem 0;
+    background: rgb(219, 219, 220);
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 90%;
+}
+
+.inp>input {
+    width: calc(100% - 3rem);
+    outline: none;
+    /* padding: 1.25rem; */
+    padding-left: 1rem;
+    color: black;
+    font-weight: 500;
+}
+
+.inp>input,
+.send {
+    background: transparent;
+    border: none;
+}
+
+.box {
+    transition: display 2s;
+}
+
+.hide {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(226,194,153);
+    border-radius: 10px;
+}
+
+.toggleBox {
+    position: sticky;
+    float: right;
+    display: flex;
+    /* margin-left: 52rem;
+    margin-top: 7rem;
+    margin-right: 1rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    /* top: 27rem; */
+    bottom: 3rem;
+    /* left: 65rem; */
+    right: 7rem;
+    /* border-radius: 5rem; */
+    background-color: transparent;
+    border: 0;
+}
+
+/* .toggleBox:active .App {
+    opacity: 1;
+} */
+
+.alterPosition {
+    /* left:48rem; */
+    right: 28rem;
+}
+
+/* .alterPosition:hover {
+    width: 9rem;
+    height: 9rem;
+} */
+
+.chatIcon {
+    width: 8rem;
+    height: 8rem;
+    transition: width 1s;
+    /* margin-right: 30rem; */
+}
+
+.chatIcon:hover {
+    width: 9rem;
+    height: 9rem;
+}
+
+.arrowIcon {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 4rem;
+}

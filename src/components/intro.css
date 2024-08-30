@@ -1,0 +1,56 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.intro_page {
+    height: 100vh;
+    background-image: url("../assets/background.jpg");
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* position: relative; */
+}
+
+.details {
+    margin-top: 13rem;
+    margin-left: 8rem;
+    /* word-spacing: 0.2rem; */
+    letter-spacing: 0.1rem;
+}
+
+.intro_head {
+    color: white;
+    width: 50%;
+    margin-bottom: 2.2rem;
+    word-spacing: 0.2rem;
+    /* font-size:2rem; */
+    /* height: 100vh; */
+    /* text-align: right; */
+    
+}
+
+.intro_detail {
+    color: white;
+    width: 32rem;
+    /* font-size: 1.2rem; */
+}
+
+.intro_start {
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    margin-top: 4rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    width: 12rem;
+    background-color: rgba(226,194,153,255);
+    color: rgb(84, 83, 83);
+    transition: width 1s;
+    letter-spacing: 0.1rem;
+}
+
+.intro_start:hover {
+    width: 13rem;
+}
