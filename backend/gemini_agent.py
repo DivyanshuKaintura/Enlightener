@@ -15,7 +15,7 @@ agent = Agent(
 )
 
 # Configuring the API key for Google's generative AI service
-genai.configure(api_key='AIzaSyCqQ676p9BZSuK5AGNSCAUrz7J3Mt7ppBA') #API
+genai.configure(api_key='Paste your gemini api key here') #API
     
 # Initializing the generative model with a specific model name
 model = genai.GenerativeModel( model_name="gemini-1.5-flash")
