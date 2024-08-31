@@ -1,11 +1,11 @@
 from uagents import Agent, Context, Model
 
 import numpy as np
-from tensorflow.keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Dropout, Reshape, Concatenate, LeakyReLU
-from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
+from tensorflow.keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D, BatchNormalization, Dropout, LeakyReLU
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.optimizers import Adam
-# from tensorflow.keras.models import Model
-import tensorflow.keras.models
+import tensorflow.keras.models 
+import os
 
 class TestRequest(Model):
     message: str
@@ -20,17 +20,9 @@ agent = Agent(
     endpoint="http://localhost:8010/submit",
 )
 
+# MesoNet
 
-
-# start
-
-
-# Height and width refer to the size of the image
-# Channels refers to the amount of color channels (red, green, blue)
-
-image_dimensions = {'height':256, 'width':256, 'channels':3}
-
-# Create a Classifier class
+image_dimensions = {'height':256, 'width':256, 'channels':3} #rgb
 
 class Classifier:
     def __init__():
@@ -47,8 +39,6 @@ class Classifier:
     
     def load(self, path):
         self.model.load_weights(path)
-        
-# Create a MesoNet class using the Classifier
 
 class Meso4(Classifier):
     def __init__(self, learning_rate = 0.001):
@@ -88,42 +78,63 @@ class Meso4(Classifier):
 
         return tensorflow.keras.models.Model(inputs = x, outputs = y)
     
+meso = Meso4()
+meso.load('./ensembler/weights/Meso4_DF.h5')
 
 
-# end
+    
+# fetchers model
+save_weights_path = './ensembler/weights/fetchers.keras'
+model_input_shape = (224, 224) 
 
+img_height, img_width = model_input_shape
+batch_size = 32
 
+model = tensorflow.keras.models.Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(img_height, img_width, 3)),
+    MaxPooling2D(pool_size=(2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D(pool_size=(2, 2)),
+    Conv2D(128, (3, 3), activation='relu'),
+    MaxPooling2D(pool_size=(2, 2)),
+    Flatten(),
+    Dense(512, activation='relu'),
+    Dropout(0.5),
+    Dense(1, activation='sigmoid')
+])
 
+# Function to check if an image is a deepfake
+def predict_image(image_path):
+    image = load_img(image_path, target_size=model_input_shape)
+    image_array = img_to_array(image)
+    image_array = np.expand_dims(image_array, axis=0)
+    image_array /= 255.0 
+
+    model.load_weights('./ensembler/weights/fetchers.keras')
+    prediction = model.predict(image_array)
+    return prediction
 
 async def handle_image(addrs):
-    # print("Hello from handle")
-    # print("address = ", addrs)
-    meso = Meso4()
-    meso.load('./ensembler/weights/Meso4_DF.h5')
-    
-    # Load the image
-    # img_path = './DeepFake/data/DeepFake/image.png' 
-    
+
     img_path = 'D:\Desktop/'+addrs
-    print(img_path)
+
+    #meso
     img = load_img(img_path, target_size=(256, 256))
-
-    # Convert image to array
     X = img_to_array(img)
-
-    # Rescale pixel values
     X = X / 255.0
-
-    # Add an extra dimension to represent the batch
     X = np.expand_dims(X, axis=0)
 
-    y = 1
+    meso_pred = meso.predict(X)[0][0]*100 
+    hehe_prediction = (predict_image(img_path) - 0.5) * 100
 
-    # Evaluating prediction  * 100:.2f
-    result = meso.predict(X)[0][0]*100
-    print(f"Predicted likelihood: {result:.2f}")
-    print("Handddyy")
-    return result
+    ensemble_prediction = (meso_pred + hehe_prediction)/2
+
+    # Make a prediction
+    print(f'The image {os.path.basename(img_path)} is a real with a confidence of {ensemble_prediction}')    
+    print(f'The image {os.path.basename(img_path)} is deepfake with a confidence of {100 - ensemble_prediction}')
+
+    print(img_path)
+    return ensemble_prediction
 
 
 
