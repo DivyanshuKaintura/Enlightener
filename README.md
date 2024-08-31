@@ -20,6 +20,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## Installation of weights.keras
+You need to download the weights.keras file from this [link](https://drive.google.com/file/d/1yXIi2eEQTjYcqVxeCvMnKvRzJIhuruJN/view?usp=drive_link).
+Now paste the file in the directory:
+### `backend/ensembler/weights/`
+
+## Gemini API key
+You need to insert your API key in the `gemini_agent.py` file. You can get the API key from this [link](https://ai.google.dev/gemini-api?gad_source=1&gclid=Cj0KCQjw28W2BhC7ARIsAPerrcK6kT7PlDcrp4EI0fiHrSuKKhhh3wHZeckAyHCwNNW8LnRtWOKh9zwaAtfyEALw_wcB&authuser=5).
+
 
 ## Initiating the backend 
 
@@ -44,9 +52,6 @@ Start the Deepfake agent
 ### `python deep_agent.py`
 
 
-## Installation of weights.keras
-You need to download the weights.keras file from this [link](https://drive.google.com/file/d/1yXIi2eEQTjYcqVxeCvMnKvRzJIhuruJN/view?usp=drive_link).
-Now paste the file in the directory:
-### `backend/ensembler/weights/`
+
 
 Now you are all set.
