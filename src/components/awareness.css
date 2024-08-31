@@ -1,0 +1,27 @@
+.awareness {
+    background-color: #393423;
+    padding: 5rem 7rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+}
+
+.awareness h3 {
+    /* display: inline-block;
+    width: fit-content; */
+    margin-top: 2rem;
+}
+
+.awareness p {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+}
+
+.awareness td {
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+}
