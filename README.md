@@ -20,8 +20,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## Installation of weights.keras
-You need to download the weights.keras file from this [link](https://drive.google.com/file/d/1yXIi2eEQTjYcqVxeCvMnKvRzJIhuruJN/view?usp=drive_link).
+## Installation of fetchers.keras
+You need to download the fetchers.keras file from this [link](https://drive.google.com/file/d/1yXIi2eEQTjYcqVxeCvMnKvRzJIhuruJN/view?usp=drive_link).
 Now paste the file in the directory:
 ### `backend/ensembler/weights/`
 
