@@ -43,4 +43,10 @@ Start the main server for Deepfake detection
 Start the Deepfake agent
 ### `python deep_agent.py`
 
+
+## Installation of weights.keras
+You need to download the weights.keras file from this [link](https://drive.google.com/file/d/1yXIi2eEQTjYcqVxeCvMnKvRzJIhuruJN/view?usp=drive_link).
+Now paste the file in the directory:
+### `backend/ensembler/weights/`
+
 Now you are all set.
